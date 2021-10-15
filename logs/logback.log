@@ -1,0 +1,2 @@
+[2021-10-15 17:06:48:635664][http-nio-8080-exec-2] WARN  com.cos.person.config.BindingAdvice - com.cos.person.web.UserController.save() => 필드 : password, 메시지 : 비밀번호가 없습니다.
+[2021-10-15 17:25:13:1740772][http-nio-8080-exec-2] WARN  com.cos.person.config.BindingAdvice - com.cos.person.web.UserController.update() => 필드 : password, 메시지 : 비밀번호는 필수값입니다.
