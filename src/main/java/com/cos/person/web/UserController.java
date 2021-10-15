@@ -56,16 +56,6 @@ public class UserController {
 	//application/json => RequestBody로 json을 java Object로 받을 수 있음
 	public CommonDto<?> save(@Valid @RequestBody JoinReqDto dto, BindingResult bindingResult) {
 		
-		if(bindingResult.hasErrors()) {
-			Map<String,String> errorMap = new HashMap<>();
-			
-			for(FieldError error : bindingResult.getFieldErrors()) {
-				errorMap.put(error.getField(), error.getDefaultMessage());
-			}
-			
-			return new CommonDto<>(HttpStatus.BAD_REQUEST.value(),errorMap);
-		}
-		
 		System.out.println("save()");
 		System.out.println("dto : "+dto);
 		
@@ -87,16 +77,6 @@ public class UserController {
 	
 	@PutMapping("/user/{id}")
 	public CommonDto<?> update(@PathVariable int id, @Valid @RequestBody UpdateReqDto dto, BindingResult bindingResult) {
-		
-		if(bindingResult.hasErrors()) {
-			Map<String,String> errorMap = new HashMap<>();
-			
-			for(FieldError error : bindingResult.getFieldErrors()) {
-				errorMap.put(error.getField(), error.getDefaultMessage());
-			}
-			
-			return new CommonDto<>(HttpStatus.BAD_REQUEST.value(),errorMap);
-		}
 		
 		System.out.println("update()");
 		System.out.println("id : "+id+ ",dto : "+dto);
